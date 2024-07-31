@@ -9,6 +9,7 @@ import routerBindings, {
 } from "@refinedev/react-router-v6";
 import { App as AntdApp } from "antd";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { dataProvider, liveProvider } from "./providers";
 
 function App() {
   return (
@@ -18,8 +19,8 @@ function App() {
         <AntdApp>
           <DevtoolsProvider>
             <Refine
-              // dataProvider={dataProvider(gqlClient)}
-              // liveProvider={liveProvider(wsClient)}
+              dataProvider={dataProvider} // for fetching data
+              liveProvider={liveProvider} // for live reaction of any subscription
               notificationProvider={useNotificationProvider}
               routerProvider={routerBindings}
               // authProvider={}
